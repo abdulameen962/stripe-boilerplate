@@ -1,0 +1,7 @@
+{% comment %} this will work a redirect immediaty to pay {% endcomment %}
+<script src="https://js.stripe.com/v3/"></script>
+{% comment %} you can use an api to fetch them  {% endcomment %}
+<script>
+    stripe = Stripe('{{ client_id }}')
+    stripe.redirectToCheckout({sessionId: '{{ checkout_id }}'})
+</script>
